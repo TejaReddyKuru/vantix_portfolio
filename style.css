@@ -387,17 +387,67 @@ a {
 .projects {
     padding: var(--section-padding);
 }
+/* Project Filters */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--primary-accent);
+    color: #fff;
+    border-color: var(--primary-accent);
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.4);
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
-    margin-top: 40px;
 }
+
 .project-card {
+    border-radius: 20px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    transition: var(--transition-fast);
+    height: 100%;
+    transition: transform var(--transition-medium), opacity var(--transition-medium), box-shadow var(--transition-medium);
+}
+
+/* Filtering classes */
+.project-card.hide {
+    display: none;
+}
+.project-card.show {
+    animation: fadeInScale 0.5s ease forwards;
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
 }
 .project-card:hover {
     transform: translateY(-10px);

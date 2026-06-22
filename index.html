@@ -80,10 +80,19 @@
                 <div class="title-underline center"></div>
                 <p class="section-subtitle">A showcase of our recent work, including live demonstrations and interactive media.</p>
             </div>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="project-filters animate-fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="ai">AI & ML</button>
+            </div>
 
             <div class="projects-grid">
                 <!-- Project 1: EcoLearner Carousel -->
-                <div class="project-card glass-panel animate-fade-up delay-100" id="ecolerner-project">
+                <div class="project-card glass-panel animate-fade-up delay-100" id="ecolerner-project" data-category="web">
                     <div class="project-media carousel-container">
                         <div class="carousel-track" id="ecolerner-track">
                             <img src="assets/images/ecolerner/Screenshot 2026-06-22 212155.png" alt="EcoLearner Screenshot 1">
@@ -104,7 +113,7 @@
                 </div>
 
                 <!-- Project 2: Sweeper Carousel -->
-                <div class="project-card glass-panel animate-fade-up delay-200" id="sweeper-project">
+                <div class="project-card glass-panel animate-fade-up delay-200" id="sweeper-project" data-category="web">
                     <div class="project-media carousel-container">
                         <div class="carousel-track" id="sweeper-track">
                             <img src="assets/images/sweeper/Screenshot 2026-06-22 212511.png" alt="Sweeper Screenshot 1">
@@ -123,7 +132,7 @@
                 </div>
 
                 <!-- Project 3: MarkMyDay Carousel -->
-                <div class="project-card glass-panel animate-fade-up delay-300" id="markmyday-project">
+                <div class="project-card glass-panel animate-fade-up delay-300" id="markmyday-project" data-category="mobile">
                     <div class="project-media carousel-container">
                         <div class="carousel-track" id="markmyday-track">
                             <img src="assets/images/markmyday/f185b1b3-b4c0-49e4-99a7-f886ff2d4a64.jpg" alt="MarkMyDay Screenshot 7">
@@ -146,7 +155,7 @@
                 </div>
 
                 <!-- Project 4: Nanotarget -->
-                <div class="project-card glass-panel animate-fade-up delay-400" id="nanotarget-project">
+                <div class="project-card glass-panel animate-fade-up delay-400" id="nanotarget-project" data-category="mobile">
                     <div class="project-media carousel-container">
                         <div class="carousel-track" id="nanotarget-track">
                             <img src="assets/images/nanotarget/7103b0bc-128f-487b-8574-1c46209f24ee.jpg" alt="Nanotarget Screenshot 1">
@@ -167,7 +176,7 @@
 
 
                 <!-- Project 5: VT Chatbot -->
-                <div class="project-card glass-panel animate-fade-up delay-500" id="vtchatbot-project">
+                <div class="project-card glass-panel animate-fade-up delay-500" id="vtchatbot-project" data-category="ai">
                     <div class="project-media carousel-container">
                         <div class="carousel-track" id="vtchatbot-track">
                             <img src="assets/images/vtchatbot/Screenshot 2026-06-22 215259.png" alt="VT Chatbot Screenshot 1">
@@ -185,7 +194,7 @@
                 </div>
 
                 <!-- Project 6: Resume-JD Matcher -->
-                <div class="project-card glass-panel animate-fade-up delay-600" id="resume-jd-project">
+                <div class="project-card glass-panel animate-fade-up delay-600" id="resume-jd-project" data-category="ai">
                     <div class="project-media carousel-container">
                         <div class="carousel-track" id="resume-jd-track">
                             <img src="assets/images/resume_ai/Screenshot 2026-06-22 224224.png" alt="Resume AI Screenshot 1">
@@ -202,7 +211,7 @@
                 </div>
 
                 <!-- Project 7: Lung Disease Classification -->
-                <div class="project-card glass-panel animate-fade-up delay-700" id="lung-disease-project">
+                <div class="project-card glass-panel animate-fade-up delay-700" id="lung-disease-project" data-category="ai">
                     <div class="project-media carousel-container">
                         <div class="carousel-track" id="lung-disease-track">
                             <img src="assets/images/ai_tool_1/images.jpg (1).jpeg" alt="Lung Disease Tool Screenshot 4">
@@ -221,7 +230,7 @@
                 </div>
 
                 <!-- Project 8: Visual Answering Assistant -->
-                <div class="project-card glass-panel animate-fade-up delay-100" id="visual-assistant-project">
+                <div class="project-card glass-panel animate-fade-up delay-100" id="visual-assistant-project" data-category="ai">
                     <div class="project-media carousel-container">
                         <div class="carousel-track" id="visual-assistant-track">
                             <img src="assets/images/ai_Tool_2/WhatsApp Image 2026-06-22 at 11.44.20 PM.jpeg" alt="Visual Assistant Screenshot 2">

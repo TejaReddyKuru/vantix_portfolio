@@ -176,4 +176,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 6. Project Filtering Logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (filterBtns.length > 0 && projectCards.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    // Reset animation state
+                    card.classList.remove('show', 'hide');
+
+                    if (filterValue === 'all' || filterValue === cardCategory) {
+                        card.classList.add('show');
+                        setTimeout(() => {
+                            // Ensure display is block/flex after animation starts
+                            card.style.display = 'flex';
+                        }, 10);
+                    } else {
+                        card.classList.add('hide');
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 10); // hiding instantly because it's set to display: none
+                    }
+                });
+            });
+        });
+    }
 });
