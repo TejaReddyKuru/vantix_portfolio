@@ -742,25 +742,7 @@ a {
 /* ==========================================================================
    Responsive Design
    ========================================================================== */
-@media (max-width: 1200px) {
-    .hero-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-left-column {
-        justify-content: center;
-        order: -1;
-    }
-
-    .hero-center-column, .hero-right-column {
-        align-items: center;
-        text-align: center;
-    }
-    
-    .hero-bottom-right {
-        align-items: center;
-    }
-}
+/* Deleted obsolete 1200px grid block */
 
 @media (max-width: 992px) {
     .about-container,
@@ -802,6 +784,39 @@ a {
     .nav-links.active {
         left: 0;
     }
+
+    /* Hero section adjustments for mobile */
+    .hero-center-text {
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        align-items: center;
+        text-align: center;
+        width: 90vw;
+    }
+    
+    .main-title { font-size: 16vw; }
+    .sub-title { font-size: 5vw; margin-top: 15px; }
+    
+    .hero-bottom-right { 
+        bottom: 10%;
+        right: 50%;
+        transform: translateX(50%);
+        width: 90vw;
+        text-align: center;
+    }
+    
+    .hero-bottom-right p {
+        font-size: 4vw;
+    }
+    
+    .hero-bottom-right .website-link {
+        font-size: 5vw;
+        margin-top: 15px;
+    }
+    
+    /* Hide decorative elements for small screens */
+    .floating-images { display: none; }
 
     /* General Typography adjustments */
     .section-title { font-size: 2.2rem; }
