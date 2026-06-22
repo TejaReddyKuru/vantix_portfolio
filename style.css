@@ -187,7 +187,7 @@ a {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 30px;
+    gap: clamp(20px, 3vw, 60px);
 }
 .nav-links li a {
     font-size: 0.95rem;
@@ -224,25 +224,53 @@ a {
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
     background-color: var(--bg-main);
-    display: block; 
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Account for fixed navbar */
 }
 
-.hero-center-text {
-    position: absolute;
-    top: 25%;
-    left: 55%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: clamp(20px, 3vw, 60px);
+    max-width: 1400px;
+    width: min(95%, 1400px);
+    margin: 0 auto;
+    position: relative;
     z-index: 10;
 }
 
+.hero-left-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(10px, 2vw, 30px);
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 5;
+}
+
+.hero-right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    z-index: 5;
+}
+
 .main-title {
-    font-size: 8.5rem;
+    font-size: clamp(3rem, 8vw, 9rem);
     font-weight: 900;
     color: var(--primary-dark);
     line-height: 1;
@@ -251,54 +279,39 @@ a {
 }
 
 .sub-title {
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 3vw, 2.8rem);
     font-weight: 800;
     color: var(--primary-dark);
     margin-top: 5px;
     letter-spacing: 1px;
 }
 
-.hero-bottom-right {
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
-    text-align: right;
-    z-index: 10;
+.hero-bottom-right p {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
+    line-height: 1.5;
+    font-weight: 600;
+    max-width: 550px;
     color: var(--primary-dark);
 }
 
-.hero-bottom-right p {
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    font-weight: 600;
-}
-
 .hero-bottom-right .website-link {
-    margin-top: 15px;
+    margin-top: clamp(10px, 1.5vw, 15px);
     font-style: italic;
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
     font-weight: 700;
 }
 
 /* Floating Images */
-.floating-images {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 5;
-}
-
 .float-img {
-    position: absolute;
     mix-blend-mode: multiply; 
+    width: clamp(150px, 18vw, 350px);
     max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
     
     opacity: 0;
-    transform: translateY(80px) scale(0.96);
     filter: blur(8px);
     animation:
         popupUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards,
@@ -307,12 +320,6 @@ a {
         var(--delay, 0s),
         calc(var(--delay, 0s) + 1s);
 }
-
-.img-1 { top: 5%; left: 2%; width: 320px; }
-.img-2 { top: 30%; left: 18%; width: 320px; }
-.img-3 { bottom: 5%; left: 5%; width: 480px; }
-.img-4 { bottom: -5%; left: -2%; width: 220px; }
-.img-5 { bottom: 15%; right: 35%; width: 350px; }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -740,19 +747,27 @@ a {
 /* ==========================================================================
    Responsive Design
    ========================================================================== */
-@media (max-width: 992px) {
-    .hero-center-text {
-        left: 50%;
-        transform: translate(-50%, -50%);
+@media (max-width: 1200px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-left-column {
+        justify-content: center;
+        order: -1;
+    }
+
+    .hero-center-column, .hero-right-column {
         align-items: center;
         text-align: center;
     }
-    .main-title { font-size: 5rem; }
+    
     .hero-bottom-right {
-        bottom: 20px;
-        right: 20px;
+        align-items: center;
     }
+}
 
+@media (max-width: 992px) {
     .about-container,
     .contact-container {
         grid-template-columns: 1fr;
@@ -793,40 +808,6 @@ a {
         left: 0;
     }
 
-    /* Hero section adjustments for mobile */
-    .hero {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 60px; /* Offset for navbar */
-    }
-    
-    .hero-center-text {
-        position: static;
-        transform: none;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .main-title { font-size: 3.5rem; }
-    .sub-title { font-size: 1.2rem; margin-bottom: 30px; }
-    
-    .hero-bottom-right { 
-        position: static;
-        text-align: center;
-        margin-top: 20px;
-        padding: 0 15px;
-    }
-    
-    /* Adjust decorative elements for small screens instead of hiding */
-    .floating-images { display: block; opacity: 0.6; }
-    .img-1 { top: 10%; left: -5%; width: 120px; }
-    .img-2 { display: none; }
-    .img-3 { bottom: 5%; left: -5%; width: 150px; }
-    .img-4 { display: none; }
-    .img-5 { bottom: 15%; right: -5%; width: 140px; }
-
     /* General Typography adjustments */
     .section-title { font-size: 2.2rem; }
     .section-subtitle { font-size: 0.95rem; }
@@ -836,7 +817,6 @@ a {
 }
 
 @media (max-width: 576px) {
-    .main-title { font-size: 2.8rem; }
     .about-container, .contact-container { gap: 30px; }
     .contact-form-wrapper { padding: 25px; }
     .footer h2 { font-size: 2rem; }
