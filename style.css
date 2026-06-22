@@ -787,7 +787,7 @@ a {
 
     /* Hero section adjustments for mobile */
     .hero-center-text {
-        top: 35%;
+        top: 25%;
         left: 50%;
         transform: translate(-50%, -50%);
         align-items: center;
@@ -795,29 +795,33 @@ a {
         width: 90vw;
     }
     
-    .main-title { font-size: 18vw; }
-    .sub-title { font-size: 5.5vw; margin-top: 15px; }
+    .main-title { font-size: 15vw; }
+    .sub-title { font-size: 4vw; margin-top: 10px; }
     
     .hero-bottom-right { 
-        bottom: 12%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90vw;
-        text-align: center;
+        bottom: 15%;
+        left: auto;
+        right: 5%;
+        transform: none;
+        width: 50vw;
+        text-align: right;
     }
     
     .hero-bottom-right p {
-        font-size: 4.5vw;
-        margin-bottom: 15px;
+        font-size: 3vw;
+        margin-bottom: 10px;
     }
     
     .hero-bottom-right .website-link {
-        font-size: 5.5vw;
-        margin-top: 10px;
+        font-size: 3.5vw;
+        margin-top: 5px;
     }
     
-    /* Hide decorative elements for small screens */
-    .floating-images { display: none; }
+    /* Show limited decorative elements for small screens on the left */
+    .floating-images { display: block; }
+    .float-img { display: none; }
+    .img-1 { display: block; top: 15%; left: -5%; width: 35vw; opacity: 0.6; }
+    .img-3 { display: block; bottom: 15%; left: -5%; width: 45vw; opacity: 0.8; }
 
     /* General Typography adjustments */
     .section-title { font-size: 2.2rem; }
