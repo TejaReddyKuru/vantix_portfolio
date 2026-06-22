@@ -787,7 +787,7 @@ a {
 
     /* Hero section adjustments for mobile */
     .hero-center-text {
-        top: 30%;
+        top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
         align-items: center;
@@ -795,24 +795,25 @@ a {
         width: 90vw;
     }
     
-    .main-title { font-size: 16vw; }
-    .sub-title { font-size: 5vw; margin-top: 15px; }
+    .main-title { font-size: 18vw; }
+    .sub-title { font-size: 5.5vw; margin-top: 15px; }
     
     .hero-bottom-right { 
-        bottom: 10%;
-        right: 50%;
-        transform: translateX(50%);
+        bottom: 12%;
+        left: 50%;
+        transform: translateX(-50%);
         width: 90vw;
         text-align: center;
     }
     
     .hero-bottom-right p {
-        font-size: 4vw;
+        font-size: 4.5vw;
+        margin-bottom: 15px;
     }
     
     .hero-bottom-right .website-link {
-        font-size: 5vw;
-        margin-top: 15px;
+        font-size: 5.5vw;
+        margin-top: 10px;
     }
     
     /* Hide decorative elements for small screens */
