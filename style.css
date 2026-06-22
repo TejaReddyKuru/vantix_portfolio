@@ -513,6 +513,8 @@ a {
     font-size: 1.5rem;
     color: var(--primary-dark);
     margin-top: 5px;
+    width: 30px;
+    text-align: center;
 }
 .info-item h4 {
     font-size: 0.95rem;
@@ -762,7 +764,12 @@ a {
     
     .vision-grid { grid-template-columns: 1fr; }
     
-    .contact-info { align-items: center; text-align: left; }
+    .contact-info { 
+        align-items: flex-start; 
+        text-align: left; 
+        width: fit-content; 
+        margin: 0 auto; 
+    }
 }
 
 @media (max-width: 768px) {
